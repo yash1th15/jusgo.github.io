@@ -6,48 +6,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCyvegZh353R4xmVOHQe0YpVtFsOkh1SXg&callback=initMap"
-				type="text/javascript"></script>
-
-                <style type= "text/css">
-				#map{
-					width: 400px;
-					height: 400px;
-				}
-				</style> 
-
-
-
-				<script type="text/javascript">
-				x= navigation.geolocation;
-				x.GetCurrentPosition(success,failure);
-
-				function success (position){
-
-				var myLat = position.coords.latitude;
-				var myLong = position.coords.longitude;
-
-				var coords = new.google.maps.Latlng(myLat,myLong);
-
-				var mapOptions = {
-
-                zoom : 9;
-				center : coordes;
-				mapTypeId : google.maps.mapTypeId.ROADMAP
-
-
-				}
-
-                var map = new google.maps.Map(document.getElementById("map"),mapOptions);
-				var marker  = new google.maps.Marker({map: map , position : coords});
-
-
-
-
-				}
-
-				function failure(){}
-				</script>
+		
 	</head>
 	<body class="homepage is-preload">
 		<div id="page-wrapper">
@@ -138,7 +97,14 @@
 				</section>
 
 			
-			<div id = "map"></div>
+			<section id= "map">	
+			<div id = "map"><iframe
+				width="450"
+				height="250"
+				frameborder="0" style="border:0"
+				src="https://www.google.com/maps/embed/v1/ROADMAP?key=AIzaSyCyvegZh353R4xmVOHQe0YpVtFsOkh1SXg&callback=initMap" allowfullscreen>
+			  </iframe></div>											
+             </section>
 														
 
 			<!-- Footer -->
