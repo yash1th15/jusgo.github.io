@@ -95,7 +95,49 @@
 					</div>
 				</section>
 
-			
+			<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCyvegZh353R4xmVOHQe0YpVtFsOkh1SXg&callback=initMap"
+				type="text/javascript"></script>
+
+                <style type= "text/css">
+				#map{
+					width: 400px;
+					height: 400px;
+				}
+				</style> 
+
+
+
+				<script type="text/javascript">
+				x= navigation.geolocation;
+				x.GetCurrentPosition(success,failure);
+
+				function success (position){
+
+				var myLat = position.coords.latitude;
+				var myLong = position.coords.longitude;
+
+				var coords = new.google.maps.Latlng(myLat,myLong);
+
+				var mapOptions = {
+
+                zoom : 9;
+				center : coordes;
+				mapTypeId : google.maps.mapTypeId.ROADMAP
+
+
+				}
+
+                var map = new google.maps.Map(document.getElementById("map"),mapOptions);
+				var marker  = new google.maps.Marker({map: map , position : coords});
+
+
+
+
+				}
+
+				function failure(){}
+				</script>
+			<div id = "map"></div>
 														
 
 			<!-- Footer -->
